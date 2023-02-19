@@ -13,6 +13,9 @@ public abstract class Body {
         this.drive = drive;
     }
 
+    public Body(Gpu gpu){
+        this.gpu = gpu;
+    }
     static class Cpu {
         private int core;
         private double frequency;
