@@ -4,6 +4,6 @@ public class Main {
         MyIntegerList list= new MyArrayIntegerList();
         list.add(16);
         list.add(25);
-        System.out.println(list.get(1));
+        System.out.println(list.get(0));
     }
 }

@@ -2,25 +2,25 @@
 
 public class MyArrayIntegerList implements MyIntegerList {
     private final int INIT_SIZE = 16;
-    private final int CUT_RATE = 4;
-    private Object[] array = new Object[INIT_SIZE];
-    private int pointer = 0;
+    private Integer[] array = new Integer[INIT_SIZE];
+    private int size = 0;
     private void resize(int newLength) { //доп массив если переполниться другой
-        Object[] newArray = new Object[newLength];
-        System.arraycopy(array, 0, newArray, 0, pointer);
-        array = newArray;
+        Integer[] newArray = new Integer[newLength];
+        for (int i = 0; i < array.length; i++){
+            array[i] = newArray[i];
+        }
     }
     @Override
     public void add(Integer value) {
-        if(pointer == array.length-1)
+        if(size == array.length-1)
             resize(array.length*2); // увеличу в 2 раза, если достигли границ
-        array[pointer++] = value;
+        array[size++] = value;
     }
 
     @Override
     public Integer get(int index) {
 
-        return (Integer) array[index];
+        return array[index];
     }
 
     @Override
@@ -52,4 +52,5 @@ public class MyArrayIntegerList implements MyIntegerList {
     public void print() {
 
     }
+
 }
