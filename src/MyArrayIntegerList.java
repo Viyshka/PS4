@@ -1,5 +1,3 @@
-
-
 public class MyArrayIntegerList implements MyIntegerList {
     private final int INIT_SIZE = 16;
     private Integer[] array = new Integer[INIT_SIZE];
@@ -25,12 +23,29 @@ public class MyArrayIntegerList implements MyIntegerList {
 
     @Override
     public int find(Integer value) {
-        return 0;
+        for (int i = 0; i < array.length; i++)
+        {
+            if (array[i] == value) {
+                return i;
+            }
+        }
+
+        return -1;
+
     }
 
     @Override
-    public MyIntegerList sort() {
-        return null;
+    public MyArrayIntegerList sort() {
+        for (int i = 0; i < this.array.length - 1; i++) {
+            for(int j = 0; j < this.array.length - i - 1; j++) {
+                if(this.array[j + 1] < this.array[j]) {
+                    int swap = this.array[j];
+                    this.array[j] = this.array[j + 1];
+                    this.array[j + 1] = swap;
+                }
+            }
+        }
+        return this;
     }
 
     @Override

@@ -21,9 +21,11 @@ public interface MyIntegerList {
 
     /**
      * вернуть сортированную копию списка
+     *
      * @return сортированный список
      */
-    MyIntegerList sort();
+
+    MyArrayIntegerList sort();
 
     /**
      * Добаить элементв в начало списока.
