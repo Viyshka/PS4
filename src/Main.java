@@ -6,7 +6,7 @@ public class Main {
         list.add(16);
         list.add(25);
         list.add(1);
-        list.add(36);
+        list.add(89);
         list.add(45);
         System.out.println(list.get(2));
         System.out.println(list.find(36));
