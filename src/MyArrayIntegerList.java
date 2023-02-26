@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MyArrayIntegerList implements MyIntegerList {
     private final int INIT_SIZE = 16;
     private Integer[] array = new Integer[INIT_SIZE];
@@ -7,6 +9,7 @@ public class MyArrayIntegerList implements MyIntegerList {
         for (int i = 0; i < array.length; i++){
             array[i] = newArray[i];
         }
+
     }
     @Override
     public void add(Integer value) {
@@ -35,17 +38,16 @@ public class MyArrayIntegerList implements MyIntegerList {
     }
 
     @Override
-    public MyArrayIntegerList sort() {
-        for (int i = 0; i < this.array.length - 1; i++) {
-            for(int j = 0; j < this.array.length - i - 1; j++) {
-                if(this.array[j + 1] < this.array[j]) {
-                    int swap = this.array[j];
-                    this.array[j] = this.array[j + 1];
-                    this.array[j + 1] = swap;
+    public void sort() {
+        for (int i = 0; i < size - 1; i++) {
+            for(int j = 0; j < size - i - 1; j++) {
+                if(array[j + 1] < array[j]) {
+                    int swap = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = swap;
                 }
             }
         }
-        return this;
     }
 
     @Override

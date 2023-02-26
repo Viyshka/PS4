@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -5,10 +6,10 @@ public class Main {
         MyIntegerList list= new MyArrayIntegerList();
         list.add(16);
         list.add(25);
-        list.add(1);
+        list.add(0);
         list.add(89);
         list.add(45);
-        System.out.println(list.get(2));
+        System.out.println(list.get(0));
         System.out.println(list.find(36));
         list.sort();
     }
